@@ -4,7 +4,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', Home, name='home_url'),
+    path('', HomeView, name='home_url'),
+    path('news', NewsView, name='news_url'),
+    path('news/<int:category_id>/', NewsView, name='news_with_category_url'),
 ]
 
 if settings.DEBUG:

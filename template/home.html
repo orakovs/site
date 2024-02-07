@@ -37,25 +37,23 @@
             </div>
         </div>
         <div class="col-lg-3">
-            <div class="p-3 rounded" style="background-color: #333333;">
-                <div class="card px-3 pt-3" style="background-color: #555555;">
+            <div class="p-3 rounded d-flex flex-column h-100" style="background-color: #333333;">
+                <div class="card px-3 pt-3 border-0 h-100" style="background-color: #333333;">
                     {% for news in news %}
                     <a href="" class="text-light text-decoration-none">
-                        <div class="row mb-4 border-bottom pb-2">                    
+                        <div class="row mb-4 border-bottom border-dark pb-2">                    
                             <div class="col">
-                                <p class="mb-2"><strong>{{ news.name }}</strong></p>
-                                <p>{{ news.datetime|date:'d.m.Y H:i' }}</p>
-
+                                <h5 class="mb-2">{{ news.name }}</h5>
+                                <p class="mb-2 text-secondary" style="font-size: 14px;">{{ news.description|truncatechars_html:128 }}</p>
+                                <span style="font-size: 12px;">{{ news.datetime|date:'d.m.Y H:i' }}</span>
                             </div>
                         </div>
                     </a>
-                        
-                        
                     {% endfor %}                    
                 </div>
             </div>
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-12 mb-3">
             <div class="p-3 rounded" style="background-color: #333333;">Блок о компании</div>
         </div>
     </div>
